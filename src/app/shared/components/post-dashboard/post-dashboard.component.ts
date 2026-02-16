@@ -20,6 +20,10 @@ export class PostDashboardComponent implements OnInit {
     this.getPost()
   }
 
+  trackByPostId(index: number, post: Ipost): string {
+  return post.id;
+}
+
   getPost(){
     this._postService.fetchPosts()
         .subscribe({
