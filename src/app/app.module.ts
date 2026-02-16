@@ -12,8 +12,9 @@ import { GetConfirmComponent } from './shared/components/get-confirm/get-confirm
 import { SummaryPipe } from './shared/pipes/summary.pipe';
 import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { MaterialModule } from './shared/material/material.module';
+import { AuthInterceptor } from './auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,11 @@ import { MaterialModule } from './shared/material/material.module';
     HttpClientModule,
     MaterialModule
   ],
-  providers: [],
+  providers: [{
+    provide : HTTP_INTERCEPTORS,
+    useClass : AuthInterceptor,
+    multi : true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
