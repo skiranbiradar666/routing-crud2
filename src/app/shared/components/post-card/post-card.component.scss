@@ -1,0 +1,31 @@
+
+
+
+
+.post-card {
+    
+  cursor: pointer;
+  border-radius: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(63, 81, 181, 0.4);
+  }
+}
+
+.read-more {
+  color: #3f51b5;
+  font-weight: 500;
+}
+
+.post-header {
+  background: linear-gradient(135deg, #e2f58d, #ed517d);
+  color: #0e0202;
+  padding: 20px;
+}

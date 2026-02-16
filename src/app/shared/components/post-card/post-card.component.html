@@ -1,0 +1,19 @@
+
+
+
+
+ 
+<div class="card post-card h-100">
+    <div class="card-header post-header">
+       <h3 class="m-0 text-dark">{{postObj.title | summary : 15}}</h3>
+    </div>
+    <div class="card-body">
+        {{postObj.content | summary}}
+    </div>
+    <div class="card-footer">
+        <button  
+        [routerLink]="['/posts', postObj.id]"
+       mat-stroked-button color="primary" class="btn-block">Read More...</button>
+    </div>
+</div>
+

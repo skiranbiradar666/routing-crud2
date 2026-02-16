@@ -1,0 +1,62 @@
+
+
+
+
+<div class="card post-form-card">
+    <div class="card-body">
+        <form [formGroup]="postForm" (ngSubmit)="onPostAdd()">
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input 
+                formControlName="title"
+                type="text" class="form-control" id="title">
+            </div>
+
+            <div class="form-group">
+                <label for="content">Content</label>
+                    <textarea
+                        formControlName="content"
+                        class="form-control"
+                        id="content">
+                    </textarea>
+            </div>
+
+
+            <div class="form-group">
+                <label for="userId">userId</label>
+                <select 
+                formControlName="userId"
+                class="form-control" id="userId">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+
+            <button 
+            type="submit"
+            *ngIf="!isInEditMode"
+           class="btn-block"
+            mat-raised-button color="warn">
+                Add Post
+            </button>
+
+             <button 
+             (click)="onPostUpdate()"
+             type="button"
+            *ngIf="isInEditMode"
+             class="btn-block"
+            mat-raised-button color="warn">
+                Update Post
+            </button>
+            
+        </form>
+    </div>
+</div>

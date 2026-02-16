@@ -1,0 +1,45 @@
+
+
+
+<div
+  class="card post-detail-card"
+  *ngIf="postobj"
+  tabindex="0">
+
+ 
+  <div class="card-header post-header">
+    <h2 class="m-0">{{ postobj.title }}</h2>
+  </div>
+
+  
+  <div class="card-body post-body">
+    <p>{{ postobj.content }}</p>
+  </div>
+
+ 
+  <div class="card-footer d-flex justify-content-between align-items-center">
+    <!-- <span class="post-meta">
+      Post with id : {{ postobj.id }}
+    </span> -->
+
+    <!-- <div class="action-buttons"> -->
+      <button
+        mat-raised-button
+        color="primary"
+        matTooltip="Edit this post"
+        [routerLink]="['/posts', postobj.id, 'edit']">
+         Edit
+      </button>
+
+      <button
+        mat-raised-button
+        color="warn"
+        matTooltip="Delete this post"
+        (click)="onRemove()">
+         Remove
+      </button>
+    <!-- </div> -->
+  </div>
+</div>
+
+

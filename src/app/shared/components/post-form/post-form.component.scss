@@ -1,0 +1,24 @@
+
+
+
+
+.post-form-card {
+  max-width: 600px;
+  margin: auto;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  animation: fadeIn 0.3s ease-in;
+}
+
+mat-form-field {
+  transition: transform 0.2s ease;
+}
+
+mat-form-field:focus-within {
+  transform: scale(1.01);
+}
+
+button {
+  height: 48px;
+  font-weight: 600;
+}
